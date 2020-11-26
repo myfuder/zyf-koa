@@ -1,5 +1,5 @@
 const {Controller,GET,POST} = require("../../decorator")
-const {article} =  require('../../modules')
+const {article} =  require('../../dao')
 import {BaseController} from '../BaseController.js'
 @Controller("/")
 class ArticleController extends BaseController{
