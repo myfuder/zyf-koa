@@ -1,9 +1,14 @@
 const {Controller,GET,POST} = require("../../decorator")
 const {article} =  require('../../dao')
 import {BaseController} from '../BaseController.js'
+const middleFn = async (ctx,next)=>{
+    // ctx.body =await "这是中间件...."
+    console.log("dasdasd")
+    await next();
+}
 @Controller("/")
 class ArticleController extends BaseController{
-    @GET("/active")
+    @GET("/active",[middleFn])
     async hello(ctx){
         // ctx.body = {
         //     code: 200,
