@@ -24,7 +24,7 @@ onerror(app)
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))
-// app.use(json())
+app.use(json())
 app.use(logger())
 app.use(cors());
 app.use(statickoa(__dirname + '/public'))
